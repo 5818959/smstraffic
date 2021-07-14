@@ -17,6 +17,7 @@ if ('status' === $operation) {
     echo '<?xml version="1.0"?><reply><account>99999</account></reply>';
 } else {
     @file_put_contents(LOG_FILE, implode(PHP_EOL, [
+        'DT: ' . date('Y-m-d H:i:s'),
         'From: ' . $_REQUEST['originator'],
         'To: ' . $_REQUEST['phones'],
         'Message: ' . $_REQUEST['message'],
